@@ -1,0 +1,15 @@
+--Need to Join all years together to get the total 3 years data combined
+with Hotel_data as (
+SELECT * FROM year_2018
+UNION
+SELECT * FROM year_2019
+UNION
+SELECT * FROM year_2020
+)
+
+--JOINS
+SELECT * FROM Hotel_data
+LEFT JOIN market_segment 
+ON Hotel_data.market_segment = market_segment.market_segment
+LEFT JOIN meal_cost
+ON meal_cost.meal=Hotel_data.meal 

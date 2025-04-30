@@ -1,0 +1,54 @@
+--What were the least and most priced items?
+   --Creating a procedure to execute it automatically later after
+CREATE PROCEDURE MAX_MIN_p_items
+AS
+BEGIN
+SELECT item_name,price
+FROM menu_items
+WHERE price=(SELECT MIN(price) FROM menu_items) 
+OR price=(SELECT MAX(price) FROM menu_items);
+END;
+EXECUTE MAX_MIN_p_items
+
+
+--What were the least and most ordered items? What categories were they in?
+SELECT m.item_name,m.category,COUNT(o.order_id)AS num_purchases FROM menu_items m
+JOIN order_details o
+ON o.item_id=m.menu_item_id
+GROUP BY m.item_name,m.category
+ORDER BY num_purchases DESC
+
+
+--Top 5 orders spent the most money
+SELECT 
+    o.order_id, 
+    m.item_name, 
+    SUM(m.price) OVER (PARTITION BY o.order_id) AS total_spent
+FROM 
+    menu_items m
+JOIN 
+    order_details o
+ON 
+    o.item_id = m.menu_item_id
+ORDER BY 
+    total_spent DESC;
+;
+--Which cuisines should we focus on developing more menu items for based on the data?
+SELECT category,COUNT(o.order_details_id) AS Numbers_of_orders, 
+COUNT(o.order_details_id) * 100.0 / SUM(COUNT(o.order_details_id)) OVER () AS Category_Percentage FROM menu_items m
+JOIN order_details o
+ON o.item_id=m.menu_item_id
+GROUP BY category
+ORDER BY 2 DESC;
+--Orders by day
+SELECT order_date,COUNT(DISTINCT order_id) AS num_of_orders FROM order_details
+GROUP BY order_date
+ORDER BY num_of_orders DESC
+
+SELECT o.order_id,m.item_name,SUM(m.price) AS Total_spent
+FROM menu_items m
+JOIN  order_details o
+ON  o.item_id = m.menu_item_id
+GROUP BY o.order_id,item_name
+ORDER BY 
+    order_id ;
