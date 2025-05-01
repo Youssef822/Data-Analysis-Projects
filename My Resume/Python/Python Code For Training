@@ -1,0 +1,154 @@
+#first python line
+print ('hello python')
+
+#Varaibles
+This_is_a_variable = '$Python \n is a powerful language    '
+print (This_is_a_variable)
+
+#title and uppercase
+print (This_is_a_variable.title())
+print (This_is_a_variable.upper())
+print (This_is_a_variable.capitalize())
+#Escape characters
+
+##\b backspace
+print (' hello\bworld')
+
+##\n new line 
+print('hello \nworld')
+
+##carriage return 
+print ('12345\rabcd')
+
+##horizontal tab
+print('hello\tworld')
+
+##cahracter hex value
+print('hello \x48\x65\x6c\x6c\x6f')
+
+# #type
+print(type(This_is_a_variable))
+print(type(12))
+
+#Concatination
+print('hello' +'\t'+ 'world')
+
+#Indexing
+print(This_is_a_variable[0]) #first character 
+print(This_is_a_variable[-1]) #first charcter from end
+
+#Slicing
+print(This_is_a_variable[0:6]) #first 6 characters
+print(This_is_a_variable[3:5]) #3rd to 5th character
+print(This_is_a_variable[3:]) #3rd to end
+print(This_is_a_variable[:3]) #start to 3rd character
+print(This_is_a_variable[::2]) #every second character
+
+#length (len)
+print(len(This_is_a_variable))
+
+#strip
+print(This_is_a_variable.strip()) #remove spaces from start and end
+print(This_is_a_variable.lstrip("$")) #remove spaces from start
+print(This_is_a_variable.rstrip()) #remove spaces from end
+
+#zfill
+a,b,c,d = '1000','100','10','1'
+print(a.zfill(4)) #fill with 0 to make it 4 digits
+print(b.zfill(4))
+print(c.zfill(4))
+print(d.zfill(4))
+
+#Split
+test = 'test-spilt-to-code'
+print(This_is_a_variable.split()) #split by space
+print(test.split('-',2))#split by - and limit to 2 splits
+print(test.rsplit('-',1))#split by - and limit to 1 splits from right
+
+#Center()
+username = "Ahmed"
+print(username.center(7,"#")) #center the string with @
+
+#count()
+print(This_is_a_variable.count('a')) #count the number of a in the string
+
+#Swapcase
+print(This_is_a_variable.swapcase()) #swap case of the string
+
+#startswith()
+print(test.startswith('t')) #check if the string starts with t
+print(This_is_a_variable.startswith('s',7,12)) #check if the 7th character to 12th character starts with s
+
+#endswith()
+print(test.endswith('e')) #check if the string ends with d
+print(This_is_a_variable.endswith('a',7,12)) #check if the 7th character to 12th character ends with a
+
+#index(substring(must iclude), start, end) ,error if not found
+[print(test.index('t',1,5))]    
+
+#find ,-1 if not found
+# the difference between it and index,if the substring is not found, it will return -1 instead of raising an error
+print(test.find('z',10,15)) #find the index of t from 9 to 15
+
+#rjust and ljust
+print(username.rjust(10,'@')) #right justify the string with @
+print(username.ljust(10,'@')) #left justify the string with @
+
+#splitlines
+print(This_is_a_variable.splitlines()) #split the string by lines
+
+#expandtabs
+tabstest='hello\tpython\tiam\texcited'
+print(tabstest.expandtabs(20)) #expand the tabs to 20 spaces
+
+#isaplpha,isspace,istitle,isidentifier
+print(This_is_a_variable.isalpha()) #check if the string is alpha
+
+#replace
+months = 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec'
+print(months.replace('Jan', '1').replace('Feb', '2').replace('Mar', '3').replace('Apr', '4').replace('May', '5').replace('Jun', '6').replace('Jul', '7').replace('Aug', '8').replace('Sep', '9').replace('Oct', '10').replace('Nov', '11').replace('Dec', '12')) #replace the months with numbers
+
+#Join
+liststudents = ["ahmed","mohamed","alaa"]
+print(",".join(liststudents)) #join the list with ,
+
+#String formatting old way 
+# %s for string, %d for integer, %f for float 
+# to edit it use %.2f for 2 decimal points 
+sname = 'kiko'
+sage = 24 
+smoney=1.5
+print('my name is %s and my age is %d and my money is %.2f' %(sname,sage,smoney)) #old way of formatting strings
+
+#String formatting other way
+#{:.2f} for 2 decimal points
+print('my name is {} and my age is {} and my mooney is {:.2f}'.format(sname,sage,smoney))
+###rearrange the string by index
+a, b, c = 'hamada','mohamed','omar'
+print('The top achievers are {2} {0} and {1}'.format(a,b,c)) #order the string by index
+
+#String formatting f-string new way
+print(f'my name is {sname} and my age is {sage} and my money is {smoney:.2f}')
+
+#conver float to int
+print(int(smoney))
+
+#--Arithmetic operators
+# +, -, *, /, //, %, **
+# + addition
+print(5+5) 
+# - subtraction
+print(10-5)
+print(-44 - -34)
+# * multiplication
+print(5*5)
+print(5+10*1000)
+# / division
+print(10/5) #float division
+print(int(10/5)) #int division
+#modulus
+print(10%3) #modulus
+#exponent ** power
+print(2**3)
+# // floor division
+print(10//3) #floor division
