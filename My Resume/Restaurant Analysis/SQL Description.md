@@ -5,7 +5,7 @@
 This set of SQL queries aims to analyze sales and order data from a restaurant to gain actionable business insights into menu performance, customer behavior, and operational patterns.
 
 ## Data Pipeline
-* **CSV File to SQL 
+* CSV File to SQL 
 ## Key Insights and Data Extracted
 
 * **Menu Item Pricing:** Queries to identify the least and most expensive items on the menu, including a stored procedure for repeatable execution.
