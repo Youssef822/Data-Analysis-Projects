@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+    margin:0;
+    font-family: SoDoSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 5px;
+  background-color: white;
+  box-shadow: 0 -2px 0 #ccc inset;
+  border-bottom: 30px solid #ffffff;
+  position: relative;
+  z-index: 1000;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-right:500px;
+  ;
+}
+.main-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: sans-serif,Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 12px;
+  letter-spacing: 3px;
+  line-height: 1.6;
+}
+.main-nav a:hover {
+    color: #00704A;
+  
+}
+.find-btn a{
+  display: flex;
+  align-items:center;
+  font-weight: 600;
+  font-family: sans-serif,Arial, Helvetica, sans-serif;
+  letter-spacing: 0.2px;
+  cursor:pointer;
+  color: black;
+  text-decoration: none;
+  margin-right:15px;
+}
+.find-btn .green {
+  opacity:0;
+  transition:opacity 0.2s
+}
+.find-btn .black {
+  width:20px;
+  height:auto;
+  margin-right:2px;
+} 
+.find-btn .green {
+  width:20px;
+  height:auto;
+  margin-right: 10px;
+}
+.rightnav-buttons {
+  display:flex;
+  align-items: center;
+  gap:15px;
+  ;  
+}
+
+.find-btn a:hover{
+  color: #00704A;
+}
+.find-btn:hover .black {
+  opacity:0;
+}
+.find-btn:hover .green {
+  opacity: 1;
+}  
+
+  
+.rightnav-buttons .Join-btn {
+  background-color:black ;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: 2px solid black;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  font-weight: 600;
+  font-family: sans-serif,Arial, Helvetica, sans-serif;
+  letter-spacing: 0.2px;
+  
+}
+.rightnav-buttons .Sign-btn {
+    background-color:rgb(255, 255, 255) ;
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: 0.5px solid black;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  font-weight: 600;
+  font-family: sans-serif,Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  
+}
+ .rightnav-buttons .Sign-btn:hover {
+  background-color: #ccc;
+  opacity:0.8;
+}
+.rightnav-buttons .Join-btn:hover {
+  background-color: rgb(99, 99, 99);
+  opacity:0.8;
+}
+.stlogo {
+  display: flex;
+  align-items: center ;
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-right: 60px;
+}
+.stlogo img {
+  width: 50px;
+  height: auto;
+  
+}
+section .hero,.order,.refills
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:100px 40px;
+  border-bottom: 1px solid #ccc;
+}
+
+.order-left {
+  flex:1;
+  background-image: url('https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-98053.jpg') ;
+  background-size: cover;
+  background-position: center;
+  height: 100% ;
+  width: 120%;
+}
+.refills-left {
+  flex:1;
+  background-image: url('https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-99432.jpg') ;
+  background-size: cover;
+  background-position: center;
+  height: 100% ;
+  width: 120%;
+}
+
+
+.hero-left {
+  flex:1;
+  background-image: url('https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-99412.jpg') ;
+  background-size: cover;
+  background-position: center;
+  height: 100% ;
+  width: 120%;
+}
+.hero, .order,.refills {
+  display: flex;
+  width: 100%;
+  height: 85vh; 
+  margin-bottom: 30px;
+  padding: 0px 0px;
+}
+.hero-right,
+ .order-right {
+  flex: 1;
+  background-color: #32462f; 
+  color: white;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+
+}
+.refills-right { 
+  flex: 1;
+  background-color: #006242; /* Starbucks dark green */
+  color: white;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+
+}
+.hero-right h1,
+ .order-right h1,
+ .refills-right h1 {
+font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.hero-right p,
+ .order-right p,
+ .refills-right p{
+  font-size: 25px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+.hero-right button,
+ .order-right button,.refills-right button
+ {
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 50px ;
+  background-color: transparent;
+  color:white;
+  font-family: sans-serif,Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight:bold;
+  cursor:pointer; 
+  transition: background-color 0.3s ease,color 0.3s ease;
+
+}
+.hero-right button:hover,
+ .order-right button:hover,.refills-right button:hover {
+  background-color:#002c1e;
+  color:white;
+
+}
+.free,.farm {
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  height: 55vh;
+  margin-bottom: 60px;
+  background-color:#d1d1aa ;
+  gap:0px;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+ 
+  
+}
+
+
+.free-left,.farm-left {
+  flex:1;
+  padding-right:40px;
+  margin-left: 100px;
+  margin-top: 100px;
+  color:#32462f;
+  align-items: center;
+  text-align: center;
+}
+.free-left h1,.farm-left h1{
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-weight: 550;
+}
+.free-left p,.farm-left p{
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  max-width: 400px;
+  text-align: center;
+  margin-left: 90px;
+}
+.free-left button,.farm-left button {
+  padding: 10px 20px;
+  border: 1px solid #32462f;
+  border-radius: 50px ;
+  background-color: transparent;
+  color:#32462f;
+  font-family: sans-serif,Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight:bold;
+  cursor:pointer; 
+  transition: background-color 0.3s ease,color 0.3s ease;
+
+}
+.free-left button:hover,.farm-left button:hover {
+  background-color:rgba(50, 70, 47, 0.1);
+  color:#32462f;
+}
+.free-right {
+  flex:1;
+  height: 100%;
+  
+  
+}
+.free-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.farm-right {
+  flex:1;
+  height: 100%;
+  
+  
+}
+.farm-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+}
+.text1 {
+  text-align: center;
+  align-items: center;
+  padding: 30px 30px;
+}
+.site-footer {
+  background-color: white;
+  padding:30px 20px;
+  text-align: left;
+  border-top:1px solid #ccc
+}
+.site-icons {
+  max-width: 100px;
+  margin:1px
+}
+.icons {
+  margin-bottom:20px;
+}
+.icons a {
+  margin:10px;
+}
+.icons a img{
+  width: 30px;
+  height:30px;
+}
+.legal {
+  font-size:10px;
+  color:#ccc;
+  letter-spacing:2px;
+}

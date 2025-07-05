@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title> Starbucks Coffee Company</title>
+    <link rel="stylesheet" href="stl.css">
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/d/d3/Starbucks_Corporation_Logo_2011.svg">
+ </head>   
+<body>
+    <header class="navigation">
+        <div class="stlogo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks Logo" width="50px">
+        </div>
+        <nav class="main-nav">
+        <a href="#">Menu</a>
+        <a href="#">Rewards</a>
+        <a href="#">gift cards</a>
+        </nav>
+        <div class="find-btn">
+            <a href="#">
+                <img class="black" src="https://e7.pngegg.com/pngimages/396/103/png-clipart-location-icon-computer-icons-location-pin-location-angle-monochrome-thumbnail.png" alt="Map Icon" width="50px">
+                <img class="green" src="https://e7.pngegg.com/pngimages/345/54/png-clipart-green-location-icon-illustration-computer-icons-google-maps-google-map-maker-adress-angle-leaf-thumbnail.png" alt="Green Map Icon" width="50px">
+                Find a store
+            </a>
+        </div>
+        <div class="rightnav-buttons">
+            <button class="Sign-btn">Sign In</button>
+            <button class="Join-btn">Join Now</button>
+        </div>
+    </header>
+</body>
+        <div class="hero-section">
+    <div class="hero-text">
+      Discover Your<br>Favorite Flavor
+      <button class="order-now-btn">Order Now</button>
+    </div>
+    <p>
+
+    </p>
+    <div class="hero-image-wrapper">
+      <div class="circle-bg" id="circleBg"></div>
+      <img src="https://www.pngplay.com/wp-content/uploads/9/Starbucks-Coffee-Transparent-Free-PNG.png" alt="Main Drink" class="hero-drink" id="mainDrink">
+    </div>
+    <div class="drink-options">
+      <img src="https://www.pngplay.com/wp-content/uploads/9/Starbucks-Coffee-Transparent-Free-PNG.png" alt="green drink" onclick="changeDrink('#00704A', this.src)">
+      <img src="https://png.pngtree.com/png-vector/20231115/ourmid/pngtree-starbucks-caramel-frappuccino-color-image-liquid-png-image_10465024.png" alt="brown drink" onclick="changeDrink('#8b6445', this.src)">
+      <img src="https://www.pngkey.com/png/full/10-101216_starbucks-coffee-png-clip-art-transparent-starbucks-transparent.png" alt="matcha drink" onclick="changeDrink('#999f58', this.src)">
+    </div>
+  </div>
+
+  <script>
+    function changeDrink(color, imageUrl) {
+      document.getElementById('circleBg').style.backgroundColor = color;
+      document.getElementById('mainDrink').src = imageUrl;
+    }
+  </script> 
+        </header>
