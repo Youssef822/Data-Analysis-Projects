@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Time Until</title>
+  <link rel="stylesheet" href="tu.css" />
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/49/49117.png" alt="Clock Logo"/>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="nav-left">
+      <img src="https://cdn-icons-png.flaticon.com/512/49/49117.png" alt="Clock Logo" class="logo-img">
+      <span class="logo-text">Time Until</span>
+    </div>
+  </nav>
+  <h1> Choose Your Event Date</h1>
+  <div id="dateinput">
+    <input type="datetime-local" id="datepicker">
+    <button onclick="startCountdown()">Start Countdown!</button>
+  </div>
+  <div id="countdown">00d 00h 00m 00s</div>
+  <audio id="joysound" src="joy.mp3"></audio>
+
+<script>
+  let timerInterval;
+
+  function startCountdown() {
+    clearInterval(timerInterval);
+    const countdown = document.getElementById("countdown");
+      countdown.classList.remove("timeanimation");
+    const input = document.getElementById("datepicker").value;
+    
+    if (!input) {
+      alert ("Enter Date and Time Please");
+      return;
+    }
+    
+    const inputDate = new Date(input).getTime();
+    function updateCountdown() {
+      const nowDate=new Date().getTime();
+      const dateDiff = inputDate - nowDate;
+    
+    if (dateDiff<=0) {
+      document.getElementById("countdown").textContent = "Time's Up";
+       document.getElementById("joysound").play();
+       document.getElementById("countdown").classList.add("timeanimation");
+      clearInterval(timerInterval);
+      return;
+    }
+        const days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+document.getElementById("countdown").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+  updateCountdown();
+  timerInterval = setInterval(updateCountdown,1000);
+  }
+</script>
+<section class="intro">
+    <p>This tool helps you calculate how much time is left until a specific event. Just choose a date and hit start!</p>
+  </section>
+</body>
+</html>
